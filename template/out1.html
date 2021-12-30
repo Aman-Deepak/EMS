@@ -1,0 +1,15 @@
+{% extends 'body.html' %}
+{% block content %}
+
+{% for te in tt %}
+    <p>Emp_code     :{{te.Emp_code}}</p>
+    <p>name     :{{te.Name}}</p>
+    <p>Year :{{te.year}}</p>
+    <p>Month     :{{te.month}}</p>
+    <p>Working days  :{{te.Number_of_working_days}}</p>
+    <p>Emp working day:{{te.Employee_working_days}}</p>
+    <p>salary     :{{te.salary}}</p>
+{% endfor %}
+
+
+{% endblock %}

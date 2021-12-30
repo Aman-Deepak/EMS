@@ -1,0 +1,25 @@
+{% extends 'body.html' %}
+{% block content %}
+{% if A   %}
+{% for te in tt %}
+    <p>code     :{{te.id}}</p>
+    <p>name     :{{te.name}}</p>
+    <p>position :{{te.position}}</p>
+    <p>DOB      :{{te.DOB}}</p>
+    <p>address  :{{te.address}}</p>
+    <p>basic pay:{{te.basic_pay}}</p>
+    <p>DOJ      :{{te.DOJ}}</p>
+{% endfor %}
+{% else  %}
+    <p>code     :{{te.id}}</p>
+    <p>name     :{{te.name}}</p>
+    <p>position :{{te.position}}</p>
+    <p>DOB      :{{te.DOB}}</p>
+    <p>address  :{{te.address}}</p>
+    <p>basic pay:{{te.basic_pay}}</p>
+    <p>DOJ      :{{te.DOJ}}</p>
+
+
+
+{% endif  %}
+{% endblock %}

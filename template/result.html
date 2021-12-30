@@ -1,0 +1,49 @@
+{% extends 'body.html' %}
+{% block content %}
+
+{% if A    %}
+<head><h1>ADD EMPLOYEE DETAIL</h1></head>
+<form action="add" method='post'>
+     {% csrf_token %}
+     EMPLOYEE NAME :  <input type="text" name="a1"><br>
+     DATE OF BIRTH :  <input type="text" name="a2"><br>
+     POSITION :  <input type="text" name="a3"><br>
+     BASE SALARY :  <input type="text" name="a4"><br>
+     DATE OF JOINING :  <input type="text" name="a5"><br>
+     ADDRESS :  <input type="text" name="a6"><br>
+     <input type="submit">
+</form>
+<div>
+
+{% elif B   %}
+<head><h1>EMPLOYEE DETAIL</h1></head>
+<form action="Dshow" method='post'>
+     {% csrf_token %}
+     EMPLOYEE CODE :  <input type="text" name="ds1" placeholder="type all for whole record"><br>
+     <input type="submit">
+</form>
+
+{% elif C  %}
+<head><h1>UPDATE SALARY</h1></head>
+<form action="salary" method='post'>
+     {% csrf_token %}
+     EMPLOYEE CODE :  <input type="text" name="s1"><br>
+     YEAR :  <input type="text" name="s2"><br>
+     MONTH :  <input type="text" name="s3"><br>
+     Number of working days :  <input type="text" name="s4"><br>
+     Employee working days :  <input type="text" name="s5"><br>
+     
+     <input type="submit">
+</form>
+
+{% elif D %}
+<head><h1>EMPLOYEE SALARY DETAIL</h1></head>
+<form action="S_show" method='post'>
+     {% csrf_token %}
+     EMPLOYEE CODE :  <input type="text" name="ss1" placeholder="type all for whole record"><br>
+     <input type="submit">
+</form>
+
+{% endif %}
+
+{% endblock %}
