@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn EMS.wsgi --log-file=-
+web: gunicorn Employee_management_system.wsgi 
