@@ -70,6 +70,7 @@ def S_show(request):
            
         else:
             try:
+                tempt = employee_detail.objects.get(id=int(code))
                 temp=salary_detail.objects.filter(Emp_code=int(code))
                 res={'te':temp,'A':False}
                 return render(request,"outt.html",res)
