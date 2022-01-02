@@ -72,8 +72,11 @@ def S_show(request):
             try:
                 tempt = employee_detail.objects.get(id=int(code))
                 temp=salary_detail.objects.filter(Emp_code=int(code))
-                res={'te':temp,'A':False}
-                return render(request,"outt.html",res)
+                if temp:
+                    res={'te':temp,'A':False}
+                    return render(request,"outt.html",res)
+                else:
+                    return HttpResponse("No record Found for given Emoloyee Code. Please give another")
             except:
                 return HttpResponse("No record Found for given Emoloyee Code. Please give another")
             
