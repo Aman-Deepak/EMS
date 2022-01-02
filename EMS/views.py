@@ -54,7 +54,7 @@ def salary(request):
         bs=int(t.basic_pay)
         sal=(bs/wd)*ewd
         salary_detail.objects.create(Emp_code = code ,Name=nam,year = yr,month =mon,Number_of_working_days=wd,Employee_working_days=ewd,salary=sal)
-        messages.info(request,'Record inserted successfully.')
+        messages.info(request,'Salary updated successfully.')
         return redirect('salary')
     else:
         return render(request,"result.html",{'C':True ,'B':False,'A':False,'D':False })
@@ -70,7 +70,7 @@ def S_show(request):
            
         else:
             try:
-                temp=salary_detail.objects.get(Emp_code=int(code))
+                temp=salary_detail.objects.filter(Emp_code=int(code))
                 res={'te':temp,'A':False}
                 return render(request,"outt.html",res)
             except:
