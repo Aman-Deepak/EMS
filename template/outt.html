@@ -11,13 +11,14 @@
     <p>salary     :{{te.salary}}</p>
 {% endfor %}
 {% else %}
-    <p>Emp_code     :{{te.Emp_code}}</p>
-    <p>name     :{{te.Name}}</p>
-    <p>Year :{{te.year}}</p>
-    <p>Month     :{{te.month}}</p>
-    <p>Working days  :{{te.Number_of_working_days}}</p>
-    <p>Emp working day:{{te.Employee_working_days}}</p>
-    <p>salary     :{{te.salary}}</p>
+{% for tt in te %}
+    <p>Emp_code     :{{tt.Emp_code}}</p>
+    <p>name     :{{tt.Name}}</p>
+    <p>Year :{{tt.year}}</p>
+    <p>Month     :{{tt.month}}</p>
+    <p>Working days  :{{tt.Number_of_working_days}}</p>
+    <p>Emp working day:{{tt.Employee_working_days}}</p>
+    <p>salary     :{{tt.salary}}</p>
 {% endif %}
 
 {% endblock %}
