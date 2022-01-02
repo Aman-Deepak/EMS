@@ -16,7 +16,7 @@ def add(request):
          DOJ1 =request.POST["a5"]
          add =request.POST["a6"]
          employee_detail.objects.create(name = nam , DOB=DO , basic_pay=bs, DOJ=DOJ1 , address=add , position=pos)
-         
+         messages.info(request,'Record inserted successfully.')
          return redirect('add')
     else:
          return render(request,"result.html",{'A':True ,'B':False,'C':False,'D':False })
@@ -30,10 +30,13 @@ def Dshow(request):
             res={'tt':temp , 'A':True}
             return render(request,"output.html",res)
         else:
-            temp = employee_detail.objects.get(id=int(code))
-            print(temp.name)
-            res={'te': temp , 'A':False}
-            return render(request,"output.html",res)
+            try:
+               temp = employee_detail.objects.get(id=int(code))
+               print(temp.name)
+               res={'te': temp , 'A':False}
+               return render(request,"output.html",res)
+            except:
+                return HttpResponse("No record Found for given Emoloyee Code. Please give another")
     else:    
         return render(request,"result.html",{'B':True ,'A':False,'C':False,'D':False })
 
