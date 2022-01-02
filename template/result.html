@@ -39,6 +39,11 @@
      
      <input type="submit">
 </form>
+<div>
+     {% for message in messages %}
+     <h2> {{message}} </h2>
+     {% endfor %}
+</div>
 
 {% elif D %}
 <head><h1>EMPLOYEE SALARY DETAIL</h1></head>
